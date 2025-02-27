@@ -12,11 +12,11 @@ defineProps({
             type="checkbox"
             v-model="model"
             :id="name"
-            class="rounded-md border-1 outline-0 text-indigo-500 ring-indigo-500 border-slate-700"
+            class="rounded-md border-1 outline-0 text-indigo-500 ring-indigo-500 border-blue-700"
         />
         <label
             :for="name"
-            class="block text-sm font-medium text-slate-700 dark:text-slate-300 cursor-pointer"
+            class="block text-sm font-medium text-blue-700 dark:text-blue-300 cursor-pointer"
         >
             <slot />
         </label>

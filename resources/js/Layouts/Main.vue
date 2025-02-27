@@ -5,7 +5,7 @@ import navlink from '../Components/navlink.vue';
 </script>
 
 <template>
-    <header class="bg-slate-800 text-white">
+    <header class="bg-blue-600 text-white">
         <nav class="p-6 mx-auto max-w-screen-lg flex items-center justify-between">
             
             <navlink routeName="home" componentName="Home">Home</navlink>
@@ -18,7 +18,7 @@ import navlink from '../Components/navlink.vue';
 
                 <button 
                     @click="switchTheme"
-                    class="hover:bg-slate-700 w-6 h-6 grid-place-item-center rounded-full hover:outline outline-1 outline-white">
+                    class="hover:bg-blue-700 w-6 h-6 grid-place-item-center rounded-full hover:outline outline-1 outline-white">
                     <i class="fa-solid fa-circle-half-stroke"></i>
                 </button>
             </div>

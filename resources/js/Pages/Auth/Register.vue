@@ -59,7 +59,7 @@ const submit = () => {
             icon="key" 
             v-model="form.password_confirmation"/>
 
-            <p class="text-slate-500 text-sm dark:text-slate-400">
+            <p class="text-blue-500 text-sm dark:text-blue-400">
                 By clicking submit, you agree to our Terms of Service and Privacy Policy.
             </p>
 
