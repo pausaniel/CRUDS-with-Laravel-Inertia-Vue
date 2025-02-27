@@ -5,41 +5,35 @@ import TextLink from '../../Components/TextLink.vue';
 import InputField from '../../Components/InputField.vue';
 import PrimaryBtn from '../../Components/PrimaryBtn.vue';
 import ErrorMessages from '../../Components/ErrorMessages.vue';
+import Checkbox from '../../Components/Checkbox.vue';
 import { Head, useForm } from '@inertiajs/vue3';
 
 const form = useForm({
-    name:"",
     email:"",
     password:"",
-    password_confirmation:""
+    remember: null,
 });
 
 const submit = () => {
-    form.post(route('register'), {
-        onFinish: () => form.reset("password", "password_confirmation"),
+    form.post(route('login'), {
+        onFinish: () => form.reset("password"),
     });
 };
 
 </script>
 
 <template>
-    <Head title="- Register" />
+    <Head title="- Login"/>
     <Container class="w-1/2">
         <div class="mb-8 text-center">
-            <Title>Register a new account</Title>
+            <Title>Login to your account</Title>
             <p>
-                Already have an account?
-                <TextLink routeName="login" label="Login"/>
+                Need and account?
+                <TextLink routeName="register" label="Register"/>
             </p>
         </div>
 
         <form @submit.prevent="submit" class="space-y-6">
-            <InputField 
-            label="Name" 
-            icon="user" 
-            v-model="form.name"
-            />
-
             <InputField 
             label="Email" 
             type="email" 
@@ -53,21 +47,18 @@ const submit = () => {
             icon="key" 
             v-model="form.password"/>
 
-            <InputField 
-            label="Confirm Password" 
-            type="password" 
-            icon="key" 
-            v-model="form.password_confirmation"/>
+            <div class="flex items-center justify-between">
 
-            <p class="text-slate-500 text-sm dark:text-slate-400">
-                By clicking submit, you agree to our Terms of Service and Privacy Policy.
-            </p>
+                <Checkbox name="remember" v-model="form.remember">Remember me</Checkbox>
+                <TextLink routeName="home" label="Forgot Password?"/>
+
+            </div>
 
             <!-- Error messages -->
             <ErrorMessages :errors="form.errors" />
 
             <PrimaryBtn :disabled="form.processing">
-                Register
+                Login
             </PrimaryBtn>
 
         </form>
