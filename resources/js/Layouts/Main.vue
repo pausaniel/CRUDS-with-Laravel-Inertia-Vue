@@ -19,6 +19,12 @@ const show = ref(false);
         <nav class="p-6 mx-auto max-w-screen-lg flex items-center justify-between">
             
             <navlink routeName="home" componentName="Home">Home</navlink>
+            
+            <div class="flex place-items-center space-x-3">
+                <i class="fa-solid fa-shirt"/>
+                <h1 class="font-bold text-xl">Products</h1>
+            </div>
+            
 
             <div class="flex items-center space-x-6">
 
@@ -27,7 +33,7 @@ const show = ref(false);
                     
                     <div 
                         @click="show =!show" 
-                        class="flex items-center gap-2 px-3 py-1 rounded-lg hover:bg-blue-700 cursor-pointer">
+                        class="flex items-center gap-2 px-3 py-1 rounded-lg hover:bg-blue-700 cursor-pointer" :class="{'bg-blue-700': show}" >
                         <p>{{ user.name }}</p>
                         <i class="fa-solid fa-angle-down"/>
                     </div>
@@ -35,20 +41,27 @@ const show = ref(false);
                     <!-- User dropdown -->
                     <div 
                         v-show="show"
-                        @click="show=false" 
-                        class="absolute z-50 top-16 right-0 bg-blue-900 text-white rounded-lg border-blue-100 border overflow-hidden w-40">
+                        @click="show = false" 
+                        class="absolute z-50 top-10 right-2 bg-blue-900 text-white rounded-lg border-blue-100 border overflow-hidden w-40">
                         
                         <Link 
                             :href="route('logout')"
                             method="post"
                             as="button"
-                            class="blockw-full px-6 py-3 hover:bg-blue-700 text-left">
+                            class="block w-full px-6 py-3 hover:bg-blue-700 text-left"> Logout
                         </Link>
                     </div>
                 </div>
 
+                <div v-if="user">
+                    <div  
+                        class="hover:bg-blue-700 dark:hover:bg-slate-700 w-6 h-6 grid-place-item-center rounded-full cursor-pointer">
+                        <i class="fa-solid fa-cart-shopping"/>
+                    </div>
+                </div>
+
                 <!-- Guest -->
-                <div v-else>
+                <div v-else class="space-x-6">
                     <navlink routeName="login" componentName="Auth/Login" icon="user">Login</navlink>
                     <navlink routeName="register" componentName="Auth/Register" icon="">Signup</navlink>
 
