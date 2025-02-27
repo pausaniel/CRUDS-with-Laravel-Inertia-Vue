@@ -18,13 +18,10 @@ const show = ref(false);
     <header class="bg-blue-600 text-white dark:bg-slate-900">
         <nav class="p-6 mx-auto max-w-screen-lg flex items-center justify-between">
             
-            <navlink routeName="home" componentName="Home">Home</navlink>
-            
             <div class="flex place-items-center space-x-3">
-                <i class="fa-solid fa-shirt"/>
-                <h1 class="font-bold text-xl">Products</h1>
+               
+                <navlink routeName="home" componentName="Home" class="font-bold text-xl"> <i class="fa-solid fa-shirt"/> Products</navlink>
             </div>
-            
 
             <div class="flex items-center space-x-6">
 
