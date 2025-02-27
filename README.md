@@ -45,7 +45,7 @@ An online marketplace where users can register, log in, and sell or shop for pro
 ❌ No product quantity management for sellers  
 ❌ No product images  
 ❌ No product filters  
-❌ No checkout functionality 
+❌ No checkout functionality
 ❌ Inconsistent coding strategies
 
 ---
