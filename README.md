@@ -1,6 +1,6 @@
 ## Implementation of CRUDS for a Product Directory using Laravel, Inertia, and Vue
 
-# 🛒 Online Marketplace  
+### 🛒 Online Marketplace  
 An online marketplace where users can register, log in, and sell or shop for products. Unauthorized users can only view products but cannot add items to their cart.
 
 ---
