@@ -42,25 +42,32 @@ const show = ref(false);
                         class="absolute z-50 top-10 right-2 bg-blue-900 text-white rounded-lg border-blue-100 border overflow-hidden w-40">
                         
                         <Link 
+                            :href="route('dashboard')"
+                            class="block w-full px-6 py-3 hover:bg-blue-700 text-left"><i class="fa-solid fa-table-columns"/>  Dashboard
+                        </Link>
+                        <Link 
                             :href="route('logout')"
                             method="post"
                             as="button"
-                            class="block w-full px-6 py-3 hover:bg-blue-700 text-left"> Logout
+                            class="block w-full px-6 py-3 hover:bg-blue-700 text-left"> <i class="fa-solid fa-right-from-bracket"/> Logout
                         </Link>
                     </div>
                 </div>
 
                 <div v-if="user">
-                    <div  
-                        class="hover:bg-blue-700 dark:hover:bg-slate-700 w-6 h-6 grid-place-item-center rounded-full cursor-pointer">
-                        <i class="fa-solid fa-cart-shopping"/>
-                    </div>
+                    <!-- Cart -->
+                    <navlink routeName="cart" componentName="Cart">
+                        <div  
+                            class="w-6 grid place-items-center rounded-full cursor-pointer">
+                            <i class="fa-solid fa-cart-shopping"/>
+                        </div>
+                    </navlink>
                 </div>
 
                 <!-- Guest -->
                 <div v-else class="space-x-6">
                     <navlink routeName="login" componentName="Auth/Login" icon="user">Login</navlink>
-                    <navlink routeName="register" componentName="Auth/Register" icon="">Signup</navlink>
+                    <navlink routeName="register" componentName="Auth/Register" icon="user-plus">Signup</navlink>
 
                 </div>
 
